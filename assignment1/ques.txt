@@ -1,0 +1,16 @@
+1. Write a program to check whether a number is even or odd.
+
+2. Write a program to check given 3 digit number is pallindrome or not.
+
+3. Write a program to check whether a given year is a leap year.
+
+4. Write a program to check whether a given character is a vowel or consonant.
+
+5. Write a program to check whether a person is eligible to vote (age ≥ 18).
+
+6. Write a program to check whether a given character is uppercase or lowercase.
+
+7. Calculating total salary based on basic. If basic <=5000 da, ta and hra will be
+10%,20% and 25% respectively otherwise da, ta and hra will be 15%,25% and 30%
+respectively.
+
