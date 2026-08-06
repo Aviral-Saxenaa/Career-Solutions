@@ -2,7 +2,7 @@
 #include <ctype.h>
 
 int isVowel(char ch) {
-    ch = (char)tolower((unsigned char)ch);
+    
     return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u';
 }
 

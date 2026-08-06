@@ -1,26 +1,19 @@
 #include <stdio.h>
 
-void getAgeGroup(int age)
+void getAgeGroup(int *age)
 {
-    if (age < 12)
-    {
+    if (*age < 12) {
         printf("Child\n");
-    }
-    else if (age <= 19)
-    {
+    } else if (*age <= 19) {
         printf("Teenager\n");
-    }
-    else if (age <= 59)
-    {
+    } else if (*age <= 59) {
         printf("Adult\n");
-    }
-    else
-    {
+    } else {
         printf("Senior\n");
     }
 }
 
-int main()
+int main(void)
 {
     int age;
 
@@ -28,7 +21,7 @@ int main()
     scanf("%d", &age);
 
     printf("Category: ");
-    getAgeGroup(age);
+    getAgeGroup(&age);
 
     return 0;
 }

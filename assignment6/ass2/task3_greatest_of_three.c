@@ -1,16 +1,34 @@
 #include <stdio.h>
 
-int findGreatest(int a, int b, int c) {
-    if (a >= b && a >= c) {
-        return a;
+int findGreatest(int a, int b, int c)
+{
+    if (a >= b)
+    {
+        if (a >= c)
+        {
+            return a;
+        }
+        else
+        {
+            return c;
+        }
     }
-    if (b >= a && b >= c) {
-        return b;
+    else if (b >= c)
+    {
+        if (b >= a)
+        {
+            return b;
+        }
+        else
+        {
+            return a;
+        }
     }
     return c;
 }
 
-int main(void) {
+int main(void)
+{
     int a;
     int b;
     int c;

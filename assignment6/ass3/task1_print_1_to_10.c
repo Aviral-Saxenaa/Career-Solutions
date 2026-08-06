@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void printOneToTen(void) {
+void printOneToTen() {
     int i;
 
     for (i = 1; i <= 10; i++) {
@@ -9,7 +9,7 @@ void printOneToTen(void) {
     printf("\n");
 }
 
-int main(void) {
+int main() {
     printOneToTen();
     return 0;
 }

@@ -1,19 +1,19 @@
 #include <stdio.h>
 
-const char *getResultClass(int marks) {
+    char getResultClass(int marks) {
     if (marks > 75) {
-        return "Distinction";
+        return 'A';
     }
     if (marks > 65) {
-        return "First Class";
+        return 'B';
     }
     if (marks > 55) {
-        return "Second Class";
+        return 'C';
     }
     if (marks >= 40) {
-        return "Pass Class";
+        return 'D';
     }
-    return "Fail";
+    return 'F';
 }
 
 int main(void) {
@@ -22,7 +22,7 @@ int main(void) {
     printf("Enter marks: ");
     scanf("%d", &marks);
 
-    printf("Result: %s\n", getResultClass(marks));
+    printf("Result: %c\n", getResultClass(marks));
 
     return 0;
 }

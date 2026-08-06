@@ -1,59 +1,63 @@
 #include <stdio.h>
 
-int powerInt(int base, int exponent) {
-    int result = 1;
-    int i;
-
-    for (i = 0; i < exponent; i++) {
-        result *= base;
-    }
-
-    return result;
-}
-
-int isArmstrong(int number) {
-    int original = number;
+int isArmstrong(int num)
+{
+    int original = num;
+    int temp = num;
     int digits = 0;
     int sum = 0;
-    int temp = number;
 
-    if (number == 0) {
-        return 1;
-    }
-
-    while (temp > 0) {
+    // Count digits
+    while (temp > 0)
+    {
         digits++;
         temp /= 10;
     }
 
-    temp = number;
-    while (temp > 0) {
-        sum += powerInt(temp % 10, digits);
+    temp = num;
+
+    // Calculate Armstrong sum
+    while (temp > 0)
+    {
+        int rem = temp % 10;
+        int power = 1;
+
+        for (int i = 1; i <= digits; i++)
+        {
+            power *= rem;
+        }
+
+        sum += power;
         temp /= 10;
     }
 
-    return sum == original;
+    if (sum == original)
+        return 1;
+    else
+        return 0;
 }
 
-void printArmstrongNumbers(int limit) {
-    int i;
+void printArmstrong(int n)
+{
+    printf("Armstrong numbers are:\n");
 
-    printf("Armstrong numbers from 1 to %d are:\n", limit);
-    for (i = 1; i <= limit; i++) {
-        if (isArmstrong(i)) {
+    for (int i = 1; i <= n; i++)
+    {
+        if (isArmstrong(i))
+        {
             printf("%d ", i);
         }
     }
-    printf("\n");
 }
 
-int main(void) {
-    int limit;
+int main()
+{
+    int n;
 
-    printf("Enter n: ");
-    scanf("%d", &limit);
+    printf("Enter limit: ");
+    scanf("%d", &n);
 
-    printArmstrongNumbers(limit);
+    printArmstrong(n);
 
     return 0;
 }

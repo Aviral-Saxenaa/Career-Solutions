@@ -7,8 +7,7 @@ int isPrime(int num)
     if (num < 2)
         return 0;
 
-    for (i = 2; i <= num / 2; i++)
-    {
+    for (i = 2; i <= num / 2; i++) {
         if (num % i == 0)
             return 0;
     }
@@ -16,14 +15,13 @@ int isPrime(int num)
     return 1;
 }
 
-void printPrime(int n)
+void printPrime(int *n)
 {
     int i;
 
     printf("Prime numbers are:\n");
 
-    for (i = 2; i <= n; i++)
-    {
+    for (i = 2; i <= *n; i++) {
         if (isPrime(i))
             printf("%d ", i);
     }
@@ -36,7 +34,7 @@ int main()
     printf("Enter limit: ");
     scanf("%d", &n);
 
-    printPrime(n);
+    printPrime(&n);
 
     return 0;
 }

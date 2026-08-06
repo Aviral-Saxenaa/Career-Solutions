@@ -1,25 +1,24 @@
 #include <stdio.h>
-#include <ctype.h>
 
-void check_case(char c){
-    if(c>=65 && c<=90){
+void check_case(char *c)
+{
+    if (*c >= 65 && *c <= 90) {
         printf("upper");
-    }
-    else if(c>=97 && c<=122){
+    } else if (*c >= 97 && *c <= 122) {
         printf("lower");
-    }
-    else{
+    } else {
         printf("invalid");
     }
 }
 
-int main(void) {
+int main(void)
+{
     char ch;
 
     printf("Enter an alphabet: ");
     scanf(" %c", &ch);
 
-    check_case(ch);
+    check_case(&ch);
 
     return 0;
 }

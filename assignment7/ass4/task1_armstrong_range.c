@@ -7,21 +7,19 @@ int isArmstrong(int num)
     int digits = 0;
     int sum = 0;
 
-    while (temp > 0)
-    {
+    while (temp > 0) {
         digits++;
         temp /= 10;
     }
 
     temp = num;
 
-    while (temp > 0)
-    {
+    while (temp > 0) {
         int rem = temp % 10;
         int power = 1;
+        int i;
 
-        for (int i = 1; i <= digits; i++)
-        {
+        for (i = 1; i <= digits; i++) {
             power *= rem;
         }
 
@@ -35,17 +33,27 @@ int isArmstrong(int num)
         return 0;
 }
 
+void printArmstrong(int *n)
+{
+    int i;
+
+    printf("Armstrong numbers are:\n");
+
+    for (i = 1; i <= *n; i++) {
+        if (isArmstrong(i)) {
+            printf("%d ", i);
+        }
+    }
+}
+
 int main()
 {
-    int num;
+    int n;
 
-    printf("Enter number: ");
-    scanf("%d", &num);
+    printf("Enter limit: ");
+    scanf("%d", &n);
 
-    if (isArmstrong(num))
-        printf("Armstrong Number");
-    else
-        printf("Not Armstrong Number");
+    printArmstrong(&n);
 
     return 0;
 }
